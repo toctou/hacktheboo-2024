@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title || "Shadowbrook Library" %></title>
+    <link rel="stylesheet" href="/dark-theme.css">
+</head>
+<body>
+    <header>
+        <%- include('../partials/header') %> <!-- Includes the header partial -->
+    </header>
+
+    <main>
+        <%- content %> <!-- This will be passed explicitly from the routes -->
+    </main>
+
+    <footer>
+        <%- include('../partials/footer') %> <!-- Includes the footer partial -->
+    </footer>
+</body>
+</html>

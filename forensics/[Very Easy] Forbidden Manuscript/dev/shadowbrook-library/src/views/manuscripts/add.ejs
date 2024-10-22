@@ -1,0 +1,17 @@
+<%- include('../layouts/main', { title: "Add a New Manuscript" }) %>
+
+<section class="add-manuscript">
+    <h2>Add a New Arcane Manuscript</h2>
+    <form action="/manuscripts/add" method="POST">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required>
+
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" rows="6" required></textarea>
+
+        <button type="submit" class="button spooky-button">Submit Manuscript</button>
+    </form>
+</section>

@@ -1,0 +1,13 @@
+<%- include('../layouts/main', { title: manuscript.title }) %>
+
+<section class="manuscript-view">
+    <h2><%= manuscript.title %></h2>
+    <p><strong>Author:</strong> <%= manuscript.author %></p>
+    <article>
+        <p><%= manuscript.content %></p>
+    </article>
+
+    <footer>
+        <p>Submitted by: <%= user || "Anonymous" %></p>
+    </footer>
+</section>
