@@ -1,6 +1,6 @@
 <img src="../../assets/banner.png" style="zoom: 80%;" align=center />
 
-<img src="../../assets/htb.png" style="zoom: 80%;" align='left' /><font size="6">SpookyPass</font>
+<img src="../../assets/logo.png" style="zoom: 80%;" align='left' /><font size="6">SpookyPass</font>
 
   4<sup>th</sup> 10 24 / Document No. D24.102.169
 

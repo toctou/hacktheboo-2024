@@ -1,7 +1,6 @@
-![img](../../../../../assets/htb.png)
+<img src="../../assets/banner.png" style="zoom: 80%;" align=center />
 
-
-<img src='../../../../../assets/logo.png' style='zoom: 80%;' align=left /> <font size='10'>Reversal</font>
+<img src="../../assets/logo.png" style="zoom: 80%;" align='left' /><font size="6">Reversal</font>
 
 1<sup>st</sup> October 2024
 

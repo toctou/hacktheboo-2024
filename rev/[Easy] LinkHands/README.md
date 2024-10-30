@@ -1,6 +1,6 @@
 <img src="../../assets/banner.png" style="zoom: 80%;" align=center />
 
-<img src="../../assets/htb.png" style="zoom: 80%;" align='left' /><font size="6">LinkHands</font>
+<img src="../../assets/logo.png" style="zoom: 80%;" align='left' /><font size="6">LinkHands</font>
 
   1<sup>st</sup> 10 24 / Document No. D24.102.167
 
