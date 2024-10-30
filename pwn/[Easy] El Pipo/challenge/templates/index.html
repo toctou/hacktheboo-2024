@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎃 El Pipo 🎃</title>
+  <style>
+    /* Body styling */
+    body {
+      font-family: 'Creepster', cursive;
+      background-color: #000;
+      color: #f3921f;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      background-image: url('/path/to/your/halloween-background.png'); /* Use the generated background */
+      background-size: cover;
+      background-attachment: fixed;
+      overflow: hidden; /* Prevent scroll bars */
+    }
+
+    h1 {
+      color: #f45b69;
+      font-size: 100px;
+      margin: 20px 0;
+      text-shadow: 2px 2px #000;
+    }
+
+    form {
+      display: inline-block;
+      padding: 50px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+    }
+
+    label, input, button {
+      font-size: 20px;
+      color: #fff;
+      text-shadow: 1px 1px #000;
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+    }
+
+    input {
+      width: 550px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid #f45b69;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #000;
+    }
+
+    button {
+      background-color: #f45b69;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #b22234;
+    }
+
+    form {
+      display: block; /* Ensure the form is a block-level element */
+      margin: 0 auto; /* Center the form */
+    }
+
+    #result {
+      font-size: 70px; /* Increase the font size */
+      margin: 1px auto; /* Center the result and add space above */
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      border-radius: 10px; /* Smaller border radius for a smoother look */
+      text-align: center; /* Center the text */
+      display: block; /* Make sure the result is a block element */
+      width: fit-content; /* Ensure the width adapts to the content */
+    }
+
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 20px 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #f3921f;
+    }
+
+    /* Moving elements: Bats, Pumpkins, and ghosts */
+    .bat, .pumpkin, .ghost {
+      position: absolute;
+      background-size: cover;
+    }
+
+    /* Larger bats */
+    .bat {
+      width: 100px;
+      height: 100px;
+      background-image: url('/static/bat.png'); /* Use a local bat image */
+      animation: flyRandom 8s infinite;
+    }
+
+    /* Define keyframes for bats to move more randomly */
+    @keyframes flyRandom {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(60vw, -70vh) rotate(45deg); }
+      50% { transform: translate(-70vw, 30vh) rotate(-30deg); }
+      75% { transform: translate(80vw, 60vh) rotate(60deg); }
+      100% { transform: translate(0, 0); }
+    }
+
+    /* Centered Pumpkins */
+    .pumpkin {
+      width: 200px;
+      height: 200px;
+      background-image: url('/static/pumpkin.png'); /* Use a local pumpkin image */
+      animation: floatUpDown 3s ease-in-out infinite;
+    }
+
+    @keyframes floatUpDown {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* Make ghosts move in circles */
+    .ghost {
+      width: 80px;
+      height: 120px;
+      background-image: url('/static/ghost.png'); /* Use a local ghost image */
+      animation: moveInCircle 5s infinite linear;
+    }
+
+    @keyframes moveInCircle {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(20px, -20px) rotate(90deg); }
+      50% { transform: translate(0px, -40px) rotate(180deg); }
+      75% { transform: translate(-20px, -20px) rotate(270deg); }
+      100% { transform: translate(0, 0) rotate(360deg); }
+    }
+
+    .ghost-left {
+      top: 10px;
+      left: 10px;
+    }
+
+    .ghost-right {
+      top: 10px;
+      right: 10px;
+    }
+
+    /* Randomize each bat's movement and timing */
+    .bat:nth-child(1) { animation-duration: 8s; top: 10%; left: 5%; }
+    .bat:nth-child(2) { animation-duration: 10s; top: 30%; left: 15%; }
+    .bat:nth-child(3) { animation-duration: 9s; top: 50%; left: 25%; }
+    .bat:nth-child(4) { animation-duration: 7s; top: 20%; left: 45%; }
+    .bat:nth-child(5) { animation-duration: 11s; top: 70%; left: 60%; }
+    .bat:nth-child(6) { animation-duration: 8.5s; top: 40%; left: 75%; }
+    .bat:nth-child(7) { animation-duration: 12s; top: 60%; left: 85%; }
+  </style>
+</head>
+<body>
+
+  <h1>🎃 El Pipo 🎃</h1>
+
+  <form id="binaryForm" action="/process" method="POST">
+    <label for="userInput"><h2 style="color: orange;">Say something scary, but only a few words..</h2></label>
+    <input type="text" id="userInput" name="userInput" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="result"></p>
+
+  <footer>
+    🎃 Beware! Spooky things lie ahead... 🎃
+  </footer>
+
+  <!-- More random bats -->
+  <div class="bat"></div>
+  <div class="bat"></div>
+  <div class="bat"></div>
+  <div class="bat"></div>
+  <div class="bat"></div>
+  <div class="bat"></div>
+  <div class="bat"></div>
+
+  <!-- Centered pumpkins -->
+  <div class="pumpkin" style="left: 15%; bottom: 10%;"></div>
+  <div class="pumpkin" style="left: 45%; bottom: 10%;"></div>
+  <div class="pumpkin" style="left: 75%; bottom: 10%;"></div>
+
+  <!-- ghosts moving in circles -->
+  <div class="ghost ghost-left"></div>
+  <div class="ghost ghost-right"></div>
+
+  <script>
+    // Handle form submission asynchronously using JavaScript (AJAX)
+    document.getElementById('binaryForm').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent traditional form submission
+
+      const input = document.getElementById('userInput').value;
+      const response = await fetch('/process', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userInput: input })
+      });
+
+      const result = await response.text(); // Assuming your binary sends back plain text
+      document.getElementById('result').innerText = result;
+    });
+  </script>
+
+</body>
+</html>
