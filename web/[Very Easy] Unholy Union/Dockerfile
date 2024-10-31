@@ -17,4 +17,4 @@ EXPOSE 3000
 COPY flag.txt /flag.txt
 
 # Command to run the application
-ENTRYPOINT [ "/entrypoint.sh" ]
+CMD [ "/entrypoint.sh" ]
