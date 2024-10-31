@@ -18,4 +18,4 @@ COPY flag.txt /flag.txt
 
 # Command to run the application
 #ENTRYPOINT [ "/entrypoint.sh" ]
-CMD ["/entrypoint.sh"]
+RUN /entrypoint.sh
