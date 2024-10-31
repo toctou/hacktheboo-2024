@@ -1,13 +1,17 @@
 #!/bin/ash
 
-# Initialize & Start MariaDB
+echo "[+] Initializing MariaDB..."
+
 mkdir -p /run/mysqld
 chown -R mysql:mysql /run/mysqld
 mysql_install_db --user=mysql --ldata=/var/lib/mysql
 mysqld --user=mysql --console --skip-networking=0 &
 
-# Wait for mysql to start
+echo "[+] Waiting for mysql to start..."
+
 while ! mysqladmin ping -h'localhost' --silent; do echo 'not up' && sleep .2; done
+
+echo "[+] Creating database..."
 
 mysql -u root << EOF
 DROP DATABASE IF EXISTS halloween_invetory;
@@ -49,5 +53,8 @@ FLUSH PRIVILEGES;
 
 EOF
 
+echo "[*] DONE!"
+
+echo "[*] Starting supervisord"
 
 /usr/bin/supervisord -c /etc/supervisord.conf
